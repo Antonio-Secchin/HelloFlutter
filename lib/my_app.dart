@@ -9,6 +9,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      //define como filho do HomeController o HomePage
       home: HomeController(
         child: HomePage(),
         ),
