@@ -6,19 +6,23 @@ class HomePage extends StatelessWidget{
 
   @override
   Widget build(BuildContext context) {
-    var controller = context.dependOnInheritedWidgetOfExactType<HomeController>();
+    //Salva o Home Controller na variavel controller
+    var controller = context.dependOnInheritedWidgetOfExactType<HomeController>()!;
 
     return Scaffold(
       appBar: AppBar(
+        //Define o titulo do aplicativo
         title: const Text('Home'),
       ),
       body:  Center(
-        child: Text('Primeiro Codigo: ${controller?.value}'),
+         //Define um texto para aparecer no centro da tela do aplicativo
+        child: Text('Primeiro Codigo: ${controller.value}'),
       ),
+      //Cria um botão que pode ser apertado para incrementar o valor do controller mostrado na tela
       floatingActionButton: FloatingActionButton(
         child: const Icon(Icons.add),
         onPressed: (){
-          print('Hello World');
+          controller.increment();
         },
       ),
       //MaterialAPP
